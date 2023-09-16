@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/fondo_blackhole"
+    tools:context=".RegisterActivity">
+
+    <TextView
+        android:id="@+id/TextViewSignup"
+        android:layout_width="151dp"
+        android:layout_height="49dp"
+        android:layout_marginStart="128dp"
+        android:layout_marginTop="64dp"
+        android:text="Sign up"
+        android:textColor="@color/white"
+        android:textSize="34sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/button2"
+        android:layout_width="279dp"
+        android:layout_height="63dp"
+        android:text="Sign up with Google"
+        app:icon="@drawable/search"
+        app:iconPadding="12dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/TextViewSignup" />
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="235dp"
+        android:layout_height="20dp"
+        android:layout_marginStart="92dp"
+        android:layout_marginTop="16dp"
+        android:text="--------or continue with email----------"
+        android:textColor="@color/white"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/button2" />
+
+
+    <Button
+        android:id="@+id/buttonCreate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="44dp"
+        android:text="Create Account"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/checkBox" />
+
+    <CheckBox
+        android:id="@+id/checkBox"
+        android:layout_width="301dp"
+        android:layout_height="64dp"
+        android:text="I agree with all the terms of Serivce and Privacy"
+        android:textColor="@color/white"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/contrasenia" />
+
+    <TextView
+        android:id="@+id/nombre"
+        android:layout_width="233dp"
+        android:layout_height="39dp"
+        android:layout_marginTop="16dp"
+        android:background="@color/white"
+        android:backgroundTint="@color/white"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView3" />
+
+    <TextView
+        android:id="@+id/apellido"
+        android:layout_width="233dp"
+        android:layout_height="39dp"
+        android:layout_marginTop="16dp"
+        android:background="@color/white"
+        android:backgroundTint="@color/white"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/nombre" />
+
+    <TextView
+        android:id="@+id/correo"
+        android:layout_width="233dp"
+        android:layout_height="39dp"
+        android:layout_marginTop="16dp"
+        android:background="@color/white"
+        android:backgroundTint="@color/white"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/apellido" />
+
+    <TextView
+        android:id="@+id/contrasenia"
+        android:layout_width="233dp"
+        android:layout_height="39dp"
+        android:layout_marginTop="16dp"
+        android:background="@color/white"
+        android:backgroundTint="@color/white"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/correo" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
