@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#953F51B5"
+    android:background="@drawable/fondo_blackhole"
     tools:context=".CronometroActivity">
 
     <TextView
@@ -14,6 +14,7 @@
         android:layout_marginTop="32dp"
         android:text="TextView"
         android:textAlignment="center"
+        android:textColor="@color/white"
         android:textSize="34sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -42,7 +43,7 @@
         app:layout_constraintTop_toBottomOf="@+id/buttonInicio" />
 
     <Button
-        android:id="@+id/button8"
+        android:id="@+id/buttonReanudar"
         android:layout_width="176dp"
         android:layout_height="60dp"
         android:layout_marginTop="16dp"
@@ -53,26 +54,15 @@
         app:layout_constraintTop_toBottomOf="@+id/buttonPausar" />
 
     <Button
-        android:id="@+id/buttonDetener"
-        android:layout_width="176dp"
-        android:layout_height="60dp"
-        android:layout_marginTop="16dp"
-        android:text="DETENER"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button8" />
-
-    <Button
         android:id="@+id/buttonLimpiar"
         android:layout_width="176dp"
         android:layout_height="60dp"
-        android:layout_marginTop="60dp"
+        android:layout_marginTop="20dp"
         android:text="LIMPIAR"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/buttonDetener" />
+        app:layout_constraintTop_toBottomOf="@+id/buttonReanudar" />
 
     <TextView
         android:id="@+id/textViewTitulo"
@@ -81,6 +71,7 @@
         android:layout_marginTop="68dp"
         android:text="Cronometro"
         android:textAlignment="center"
+        android:textColor="@color/white"
         android:textSize="24sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"

@@ -30,7 +30,6 @@ public class Result {
 
     private String nat;
 
-    private Map<String, Object> additionalProperties = new LinkedHashMap<String, Object>();
 
     public String getGender() {
         return gender;
@@ -128,11 +127,5 @@ public class Result {
         this.nat = nat;
     }
 
-    public Map<String, Object> getAdditionalProperties() {
-        return additionalProperties;
-    }
 
-    public void setAdditionalProperties(Map<String, Object> additionalProperties) {
-        this.additionalProperties = additionalProperties;
-    }
 }

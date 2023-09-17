@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#7E673AB7"
+    android:background="@drawable/fondo_blackhole"
     tools:context=".ContadorActivity">
 
     <EditText
@@ -16,6 +16,7 @@
         android:inputType="number"
         android:text="104"
         android:textAlignment="center"
+        android:textColor="@color/white"
         android:textSize="60sp"
         app:layout_constraintBottom_toTopOf="@+id/buttonIniciarContador"
         app:layout_constraintEnd_toEndOf="parent"

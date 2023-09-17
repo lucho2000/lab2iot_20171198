@@ -15,6 +15,7 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.lab2application.classes.Respuesta;
 import com.example.lab2application.classes.Result;
 import com.example.lab2application.interfaces.Api;
 
@@ -41,12 +42,12 @@ public class RegisterActivity extends AppCompatActivity {
 
 
         Button buttonRegistro = findViewById(R.id.buttonCreate);
-        buttonRegistro.setEnabled(true);
+        buttonRegistro.setEnabled(false);
 
         textoNombre = findViewById(R.id.nombre);
         textoApellido = findViewById(R.id.apelli);
         textoCorreo =findViewById(R.id.correo);
-        textoContrasenia =findViewById(R.id.contrasenia);
+        textoContrasenia =findViewById(R.id.editTextTextPassword);
 
         CheckBox deAcuerdo = findViewById(R.id.checkBox);
 
@@ -187,21 +188,25 @@ public class RegisterActivity extends AppCompatActivity {
                 .build()
                 .create(Api.class);
 
-        typicodeService.getResult().enqueue(new Callback<Result>() {
+        typicodeService.getResult().enqueue(new Callback<Respuesta>() {
             @Override
-            public void onResponse(Call<Result> call, Response<Result> response) {
-                Result result = response.body();
+            public void onResponse(Call<Respuesta> call, Response<Respuesta> response) {
                 if (response.isSuccessful()){
+                    Respuesta respuesta = response.body();
 
-                    Log.d("nombre", "nombre: " + result.getName().getFirst());
-
+                    Result result = respuesta.getResults().get(0);
+                    textoNombre.setText(result.getName().getFirst() );
+                    textoApellido.setText(result.getName().getLast() );
+                    textoCorreo.setText(result.getEmail() );
+                    textoContrasenia.setText(result.getLogin().getPassword() );
                 } else {
-                    Log.d("msg-test", "error en la consulta");
+                    Log.d( "msg-test", "error de cosnulta" );
                 }
+
             }
 
             @Override
-            public void onFailure(Call<Result> call, Throwable t) {
+            public void onFailure(Call<Respuesta> call, Throwable t) {
                 t.printStackTrace();
             }
         });

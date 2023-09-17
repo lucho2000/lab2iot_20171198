@@ -10,7 +10,6 @@ public class Name {
 
     private String last;
 
-    private Map<String, Object> additionalProperties = new LinkedHashMap<String, Object>();
 
 
     public String getTitle() {
@@ -37,11 +36,4 @@ public class Name {
         this.last = last;
     }
 
-    public Map<String, Object> getAdditionalProperties() {
-        return additionalProperties;
-    }
-
-    public void setAdditionalProperties(Map<String, Object> additionalProperties) {
-        this.additionalProperties = additionalProperties;
-    }
 }

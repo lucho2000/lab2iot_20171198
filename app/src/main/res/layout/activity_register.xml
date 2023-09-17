@@ -69,23 +69,24 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.6"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/contrasenia" />
+        app:layout_constraintTop_toBottomOf="@+id/editTextTextPassword" />
 
     <TextView
         android:id="@+id/nombre"
         android:layout_width="265dp"
         android:layout_height="36dp"
-        android:layout_marginTop="120dp"
+        android:layout_marginTop="112dp"
         android:background="@color/white"
         android:backgroundTint="@color/white"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.486"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/TextViewSignup" />
 
     <TextView
         android:id="@+id/apelli"
-        android:layout_width="264dp"
-        android:layout_height="37dp"
+        android:layout_width="266dp"
+        android:layout_height="40dp"
         android:layout_marginTop="20dp"
         android:background="@color/white"
         android:backgroundTint="@color/white"
@@ -96,8 +97,8 @@
 
     <TextView
         android:id="@+id/correo"
-        android:layout_width="263dp"
-        android:layout_height="35dp"
+        android:layout_width="265dp"
+        android:layout_height="39dp"
         android:layout_marginTop="20dp"
         android:background="@color/white"
         android:backgroundTint="@color/white"
@@ -105,18 +106,6 @@
         app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/apelli" />
-
-    <TextView
-        android:id="@+id/contrasenia"
-        android:layout_width="261dp"
-        android:layout_height="36dp"
-        android:layout_marginTop="20dp"
-        android:background="@color/white"
-        android:backgroundTint="@color/white"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.486"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/correo" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline"
@@ -131,5 +120,20 @@
         android:layout_height="wrap_content"
         android:orientation="vertical"
         app:layout_constraintGuide_begin="71dp" />
+
+    <EditText
+        android:id="@+id/editTextTextPassword"
+        android:layout_width="266dp"
+        android:layout_height="48dp"
+        android:layout_marginTop="12dp"
+        android:background="@color/white"
+        android:backgroundTint="@color/white"
+        android:ems="10"
+        android:hint="password"
+        android:inputType="textPassword"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.483"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/correo" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
