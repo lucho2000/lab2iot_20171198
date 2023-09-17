@@ -25,6 +25,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        //logica para obtener y mandar datos de api al otro activity
 
 
     }

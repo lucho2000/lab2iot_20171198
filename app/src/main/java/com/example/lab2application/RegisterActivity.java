@@ -10,6 +10,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.CompoundButton;
+import android.widget.EditText;
 import android.widget.TextView;
 
 public class RegisterActivity extends AppCompatActivity {
@@ -24,7 +25,7 @@ public class RegisterActivity extends AppCompatActivity {
         buttonRegistro.setEnabled(false);
 
         TextView textoNombre = findViewById(R.id.nombre);
-        TextView textoApellido =findViewById(R.id.apellido);
+        TextView textoApellido =findViewById(R.id.apelli);
         TextView textoCorreo =findViewById(R.id.correo);
         TextView textoContrasenia =findViewById(R.id.contrasenia);
 
