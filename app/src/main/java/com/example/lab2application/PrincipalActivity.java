@@ -6,6 +6,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.Toast;
 
 public class PrincipalActivity extends AppCompatActivity {
 
@@ -29,5 +30,11 @@ public class PrincipalActivity extends AppCompatActivity {
             startActivity(intent);
         });
 
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        Toast.makeText(PrincipalActivity.this, "Esta en la vista de escoger entre Contador y Cronometro",Toast.LENGTH_SHORT).show();
     }
 }

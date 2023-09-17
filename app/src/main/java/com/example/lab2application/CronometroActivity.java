@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class CronometroActivity extends AppCompatActivity {
 
@@ -74,5 +75,11 @@ public class CronometroActivity extends AppCompatActivity {
         long milliseconds = time % 1000;
         String timeString = String.format("%02d:%02d.%03d", minutes, seconds, milliseconds);
         textoCuenta.setText("Tiempo: " + timeString);
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        Toast.makeText(CronometroActivity.this, "Se encuentra en la vista de Cronometro",Toast.LENGTH_SHORT).show();
     }
 }

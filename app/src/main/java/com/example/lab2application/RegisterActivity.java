@@ -12,6 +12,7 @@ import android.widget.CheckBox;
 import android.widget.CompoundButton;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class RegisterActivity extends AppCompatActivity {
 
@@ -150,5 +151,10 @@ public class RegisterActivity extends AppCompatActivity {
             startActivity(intent);
         });
 
+    }
+    @Override
+    protected void onResume() {
+        super.onResume();
+        Toast.makeText(RegisterActivity.this, "Esta en la vista de Registro",Toast.LENGTH_SHORT).show();
     }
 }
