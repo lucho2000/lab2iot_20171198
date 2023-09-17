@@ -7,58 +7,87 @@ import android.os.CountDownTimer;
 import android.os.Vibrator;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
 public class ContadorActivity extends AppCompatActivity {
 
-    private CountDownTimer countDownTimer;
-    private int counterValue = 104;
+    //private CountDownTimer countDownTimer;
+    private Button botonIniciarParar;
+
+    private EditText textInicial;
+    private int counterValue = 104; //valor inicial
     private boolean counting = false;
-    private boolean fastMode = false;
+    private Thread counterThread; //hilo
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_contador);
 
-        Button botonIniciarParar = findViewById(R.id.buttonIniciarContador);
-        EditText textInicial = findViewById(R.id.editTextNumber);
+        botonIniciarParar = findViewById(R.id.buttonIniciarContador);
+        textInicial = findViewById(R.id.editTextNumber);
 
         botonIniciarParar.setOnClickListener(view -> {
             if (counting) {
                 // Detener el contador
-                countDownTimer.cancel();
-                counting = false;
-                botonIniciarParar.setText("Iniciar");
+                pararCuenta();
             } else {
                 // Iniciar el contador
-                counting = true;
-                botonIniciarParar.setText("Detener");
-
-                // Aumentar la velocidad si está en modo rápido
-                int interval = fastMode ? 5000 : 10000;
-
-
-                countDownTimer = new CountDownTimer((226 - counterValue) * 1000, interval) {
-                    @Override
-                    public void onTick(long millisUntilFinished) {
-                        counterValue++;
-                        textInicial.setText(String.valueOf(counterValue));
-                    }
-
-                    @Override
-                    public void onFinish() {
-                        textInicial.setText("226");
-                        // Reproducir una alarma o vibrar aquí
-                        Vibrator vibrator = (Vibrator) getSystemService(VIBRATOR_SERVICE);
-                        if (vibrator != null) {
-                            vibrator.vibrate(2000); // Vibrar durante 2 segundos
-                        }
-                    }
-                };
-
-                countDownTimer.start();
+                iniciarCuenta();
             }
         });
 
+
+    }
+
+    public void iniciarCuenta(){
+        counting = true;
+        botonIniciarParar.setText("Detener");
+
+        counterThread = new Thread(new Runnable() {
+            @Override
+            public void run() {
+                while (counting && counterValue < 226) {
+                    try {
+                        Thread.sleep(10000); // Espera 10 segundos
+                        counterValue++;
+                        runOnUiThread(new Runnable() {
+                            @Override
+                            public void run() {
+                                textInicial.setText(String.valueOf(counterValue));
+                            }
+                        });
+                    } catch (InterruptedException e) {
+                        e.printStackTrace();
+                    }
+                }
+
+                if (counterValue >= 226) {
+
+                    //vibrar
+                    Vibrator vibrator = (Vibrator) getSystemService(VIBRATOR_SERVICE);
+                    if (vibrator != null) {
+                        vibrator.vibrate(2000);
+                    }
+                }
+            }
+        });
+        counterThread.start();
+
+    }
+
+    public void pararCuenta(){
+        counting = false;
+        botonIniciarParar.setText("Iniciar");
+        if (counterThread != null) {
+            counterThread.interrupt();
+            counterThread = null;
+        }
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        Toast.makeText(ContadorActivity.this, "Esta en la vista de iniciar el Contador",Toast.LENGTH_SHORT).show();
     }
 }

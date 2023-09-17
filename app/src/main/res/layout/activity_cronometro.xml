@@ -9,12 +9,13 @@
 
     <TextView
         android:id="@+id/textViewCuenta"
-        android:layout_width="207dp"
-        android:layout_height="75dp"
-        android:layout_marginStart="100dp"
+        android:layout_width="287dp"
+        android:layout_height="58dp"
         android:layout_marginTop="32dp"
         android:text="TextView"
-        android:textSize="48sp"
+        android:textAlignment="center"
+        android:textSize="34sp"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textViewTitulo" />
 
@@ -75,8 +76,8 @@
 
     <TextView
         android:id="@+id/textViewTitulo"
-        android:layout_width="132dp"
-        android:layout_height="31dp"
+        android:layout_width="160dp"
+        android:layout_height="37dp"
         android:layout_marginTop="68dp"
         android:text="Cronometro"
         android:textAlignment="center"

@@ -74,7 +74,7 @@ public class CronometroActivity extends AppCompatActivity {
         long seconds = (time / 1000) % 60;
         long milliseconds = time % 1000;
         String timeString = String.format("%02d:%02d.%03d", minutes, seconds, milliseconds);
-        textoCuenta.setText("Tiempo: " + timeString);
+        textoCuenta.setText(timeString);
     }
 
     @Override

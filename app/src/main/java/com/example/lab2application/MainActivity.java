@@ -13,8 +13,20 @@ import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.lab2application.classes.Result;
+import com.example.lab2application.interfaces.Api;
+
+import java.util.List;
+
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
+import retrofit2.Retrofit;
+import retrofit2.converter.gson.GsonConverterFactory;
+
 public class MainActivity extends AppCompatActivity {
 
+    Result result;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -41,11 +53,11 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(MainActivity.this, RegisterActivity.class);
+
+                //mandando los datos obtenidos al otro activity
                 startActivity(intent);
             }
         });
-
-        //logica para obtener y mandar datos de api al otro activity
 
 
     }
@@ -55,4 +67,6 @@ public class MainActivity extends AppCompatActivity {
         super.onResume();
         Toast.makeText(MainActivity.this, "Esta en la pagina de inicio de la app",Toast.LENGTH_SHORT).show();
     }
+
+
 }
