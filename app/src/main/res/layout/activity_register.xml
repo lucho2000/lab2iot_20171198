@@ -67,14 +67,14 @@
         android:text="I agree with all the terms of Service and Privacy"
         android:textColor="@color/white"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.4"
+        app:layout_constraintHorizontal_bias="0.6"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/contrasenia" />
 
     <TextView
         android:id="@+id/nombre"
-        android:layout_width="228dp"
-        android:layout_height="34dp"
+        android:layout_width="265dp"
+        android:layout_height="36dp"
         android:layout_marginTop="120dp"
         android:background="@color/white"
         android:backgroundTint="@color/white"
@@ -84,8 +84,8 @@
 
     <TextView
         android:id="@+id/apelli"
-        android:layout_width="228dp"
-        android:layout_height="34dp"
+        android:layout_width="264dp"
+        android:layout_height="37dp"
         android:layout_marginTop="20dp"
         android:background="@color/white"
         android:backgroundTint="@color/white"
@@ -96,8 +96,8 @@
 
     <TextView
         android:id="@+id/correo"
-        android:layout_width="228dp"
-        android:layout_height="34dp"
+        android:layout_width="263dp"
+        android:layout_height="35dp"
         android:layout_marginTop="20dp"
         android:background="@color/white"
         android:backgroundTint="@color/white"
@@ -108,14 +108,28 @@
 
     <TextView
         android:id="@+id/contrasenia"
-        android:layout_width="228dp"
-        android:layout_height="34dp"
+        android:layout_width="261dp"
+        android:layout_height="36dp"
         android:layout_marginTop="20dp"
         android:background="@color/white"
         android:backgroundTint="@color/white"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintHorizontal_bias="0.486"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/correo" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_begin="334dp" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_begin="71dp" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
